@@ -1,0 +1,53 @@
+<main>
+  <div>
+    <h3>Today's Date</h3>
+    <p>{{ presentDate | date }}</p>
+  </div>
+
+  <div>
+    <h3>Date Formats</h3>
+    <p><strong>This is a short date:</strong> {{ presentDate | date: 'shortDate' }}</p>
+    <p><strong>This line shows the full date:</strong> {{ presentDate | date: 'fullDate' }}</p>
+    <p><strong>This will show a formatted date:</strong> {{ presentDate | date: 'dd-MM-yyyy' }}</p>
+    <p><strong>This indicates the hours and minutes:</strong> {{ presentDate | date: 'hh:mm' }}</p>
+  </div>
+
+  <div>
+    <h3>Uppercase and Lowercase Date</h3>
+    <p><strong>Date with uppercase:</strong> {{ presentDate | date: 'fullDate' | uppercase }}</p>
+    <p><strong>Date with lowercase:</strong> {{ presentDate | date: 'medium' | lowercase }}</p>
+  </div>
+
+  <div>
+    <h3>Time Updates</h3>
+    <p><strong>Second changing in Time:</strong> {{ time$ | async | date: 'mediumTime' }}</p>
+  </div>
+
+  <h2>JSON Pipe Output</h2>
+  <p><strong>Object:</strong> {{ testObject }}</p>
+  <p><strong>Object with JsonPipe:</strong> {{ testObject | json }}</p>
+  <p><strong>array: {{testArray}}</strong></p>
+
+  <div>
+    <h3>Array Manipulation with Slice</h3>
+    <p><strong>Start index:</strong> {{ Fruits | slice: 2 }}</p>
+    <p><strong>Start and end index:</strong> {{ Fruits | slice: 1:4 }}</p>
+    <p><strong>Negative index:</strong> {{ Fruits | slice: -2 }}</p>
+    <p><strong>Negative start and end index:</strong> {{ Fruits | slice: -4:-2 }}</p>
+    <p><strong>Experiment:</strong> {{ Fruits | slice: -3:-2 }}</p>
+  </div>
+
+  <div style="text-align: center">
+    <h3>Decimal Pipe Formatting</h3>
+    <p><strong>Apply formatting (example 1):</strong> {{ decimalNum1 | number: '3.1' }}</p>
+    <p><strong>Apply formatting (example 2):</strong> {{ decimalNum2 | number: '2.1-4' }}</p>
+  </div>
+
+  <div>
+    {{todaydate}} <br>
+    {{componentproperty}}
+    <app-new-cmp></app-new-cmp>
+  </div>
+</main>
+
+<router-outlet />
