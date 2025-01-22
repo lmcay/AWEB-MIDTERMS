@@ -1,0 +1,45 @@
+<main class="container mt-5">
+
+  <h2 class="mb-4">Employees List</h2>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.id}}</td>
+        <td>{{employee.firstname}}</td>
+        <td>{{employee.lastname}}</td>
+        <td>{{employee.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h2 class="mt-5 mb-4">Products List</h2>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.productname}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<router-outlet></router-outlet>
