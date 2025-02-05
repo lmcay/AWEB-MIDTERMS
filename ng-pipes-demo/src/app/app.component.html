@@ -1,24 +1,76 @@
 <main>
-  <div>
+  <!-- <div>
     <h3>Today's Date</h3>
     <p>{{ presentDate | date }}</p>
-  </div>
+  </div> -->
 
-  <div>
+  <!-- <div>
     <h3>Date Formats</h3>
     <p><strong>This is a short date:</strong> {{ presentDate | date: 'shortDate' }}</p>
     <p><strong>This line shows the full date:</strong> {{ presentDate | date: 'fullDate' }}</p>
     <p><strong>This will show a formatted date:</strong> {{ presentDate | date: 'dd-MM-yyyy' }}</p>
     <p><strong>This indicates the hours and minutes:</strong> {{ presentDate | date: 'hh:mm' }}</p>
-  </div>
+    <br><br>
+    <p><strong>This is a custom date</strong> {{ presentDate | date: 'MM/dd/yyyy' }}</p>
+    <p><strong>This is a short time</strong> {{ presentDate | date: 'shortTime' }}</p>
+    <br><br>
+  </div> -->
 
-  <div>
+  <!-- <div>
     <h3>Uppercase and Lowercase Date</h3>
     <p><strong>Date with uppercase:</strong> {{ presentDate | date: 'fullDate' | uppercase }}</p>
     <p><strong>Date with lowercase:</strong> {{ presentDate | date: 'medium' | lowercase }}</p>
+  </div> -->
+
+  <div>
+    <h3>Data Pipes</h3>
+    <p><Strong>Short Date Format</Strong>{{ currentDate | date:'shortDate' }}</p>
+    <p><Strong>Full Date Format:</Strong>{{ currentDate | date:'fullDate' }}</p>
+    <p><Strong>Custom Date (MM/dd/yyyy):</Strong>{{ currentDate | date:'MM/dd/yyyy' }}</p>
+    <p><Strong>Short Time Format:</Strong>{{ currentDate | date:'shortTime' }}</p>
+    <p><Strong>Day of the Year:</Strong>{{ currentDate | date:'d' }}</p>
+    <p><Strong>Week of the Year:</Strong>{{ currentDate | date:'w' }}</p>
   </div>
 
   <div>
+    <h3>Currency Pipes</h3>
+    <p><strong>USD Standard</strong> {{ price | currency:'USD':'symbol':'1.2-2' }}</p>
+    <p><strong>USD with Currency Code</strong> {{ price | currency:'USD':'code':'1.2-2' }} </p>
+    <p><strong>INR Format</strong> {{ price | currency:'INR':'symbol':'1.2-2' }}</p>
+    <p><strong>GBP Format</strong> {{ price | currency:'GBP':'symbol':'1.2-2' }}</p>
+  </div>
+
+  <div>
+    <h3>Async Pipes</h3>
+    <p><strong>Array Stream:</strong>{{ arrayStream$ | async }}</p>
+    <p><strong>Transformed Object:</strong>{{ transformedData$ | async }}</p>
+  </div>
+
+  <div>
+    <h3>JSON Pipes</h3>
+    <p><strong>Nested Arrays:</strong>{{ nestedArrays | json }}</p>
+    <p><strong>Complex Object:</strong>{{ complexData | json }}</p>
+    <p><strong>Mixed Data Types:</strong>{{ mixedTypes | json }}</p>
+  </div>
+
+  <div>
+    <h3>Slice Pipes</h3>
+    <p><strong>Middle Elements:</strong>{{ numbers | slice:3:6 }}</p>
+    <p><strong>Negative Start:</strong>{{ numbers | slice:-3 }}</p>
+    <p><strong>Last Two Characters:</strong>{{ longString | slice:-2 }}</p>
+    <p><strong>First Five Characters:</strong>{{ longString | slice:0:5 }}</p>
+  </div>
+
+  
+
+  
+  
+
+  
+
+
+
+  <!-- <div>
     <h3>Time Updates</h3>
     <p><strong>Second changing in Time:</strong> {{ time$ | async | date: 'mediumTime' }}</p>
   </div>
@@ -35,8 +87,12 @@
     <p><strong>Negative index:</strong> {{ Fruits | slice: -2 }}</p>
     <p><strong>Negative start and end index:</strong> {{ Fruits | slice: -4:-2 }}</p>
     <p><strong>Experiment:</strong> {{ Fruits | slice: -3:-2 }}</p>
-  </div>
+    <br><br>
+    <p><strong>Experiment:</strong> {{ testArray | slice: 3 }}</p> -->
 
+
+  <!-- </div> -->
+<!-- 
   <div style="text-align: center">
     <h3>Decimal Pipe Formatting</h3>
     <p><strong>Apply formatting (example 1):</strong> {{ decimalNum1 | number: '3.1' }}</p>
@@ -47,7 +103,38 @@
     {{todaydate}} <br>
     {{componentproperty}}
     <app-new-cmp></app-new-cmp>
-  </div>
+  </div> -->
 </main>
 
 <router-outlet />
+
+
+<!-- 
+
+
+{{ currentDate | date:'shortDate' }}
+{{ currentDate | date:'fullDate' }}
+{{ currentDate | date:'MM/dd/yyyy' }}
+{{ currentDate | date:'shortTime' }}
+{{ currentDate | date:'d' }}
+{{ currentDate | date:'w' }}
+
+
+{{ price | currency:'USD':'symbol':'1.2-2' }}
+{{ price | currency:'USD':'code':'1.2-2' }}
+{{ price | currency:'INR':'symbol':'1.2-2' }}
+{{ price | currency:'GBP':'symbol':'1.2-2' }}
+
+{{ arrayStream$ | async }}
+{{ transformedData$ | async }}
+
+{{ nestedArrays | json }}
+{{ complexData | json }}
+{{ mixedTypes | json }}
+
+{{ numbers | slice:3:6 }}
+{{ numbers | slice:-3 }}
+{{ longString | slice:-2 }}
+{{ longString | slice:0:5 }}
+
+-->
